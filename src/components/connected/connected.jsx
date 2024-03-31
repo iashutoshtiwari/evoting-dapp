@@ -11,6 +11,12 @@ const Connected = (props) => {
   // Column Definitions: Defines the columns to be displayed.
   const [colDefs, setColDefs] = useState([{ field: 'index' }, { field: 'name' }, { field: 'voteCount' }])
 
+  const [minutes, setMinutes] = useState(0)
+
+  useEffect(() => {
+    setMinutes(Math.floor(props.remainingTime / 60))
+  }, [props.remainingTime])
+
   useEffect(() => {
     setRowData(props.candidates)
   }, [props.candidates])
@@ -18,9 +24,9 @@ const Connected = (props) => {
   return (
     <>
       <div className='connected-container'>
-        <h1 className='connected-header'>You are Connected to Metamask</h1>
+        <h1 className='connected-header'>You are connected to Metamask</h1>
         <p className='connected-account'>Metamask Account: {props.account}</p>
-        <p className='connected-account'>Remaining Time: {props.remainingTime}</p>
+        <p className='connected-account'>Remaining time: {minutes} min</p>
         {props.showButton ? (
           <p className='connected-account'>You have already voted</p>
         ) : (

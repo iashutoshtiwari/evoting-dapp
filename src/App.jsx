@@ -83,7 +83,7 @@ const App = () => {
     const signer = provider.getSigner()
     const contractInstance = new ethers.Contract(contractAddress, contractAbi, signer)
     const time = await contractInstance.getRemainingTime()
-    setremainingTime(parseInt(time, 16))
+    setremainingTime(parseInt(time))
   }
 
   function handleAccountsChanged(accounts) {
