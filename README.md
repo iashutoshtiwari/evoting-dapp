@@ -1,8 +1,26 @@
-# React + Vite
+# Decentralized Voting Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a demo application to implement voting in solidity smart contract using React.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+After you cloned the repository, you want to install the packages using
+
+```shell
+npm install
+```
+
+You first need to compile the contract and upload it to the blockchain network. Run the following commands to compile and upload the contract.
+
+```shell
+npx hardhat compile
+npx hardhat run --network volta scripts/deploy.js
+```
+
+Once the contract is uploaded to the blockchain, copy the contract address and copy it in the .env file. You can also use another blockchain by writing the blockchain's endpoint in hardhat-config.
+
+Once you have pasted your private key and contract address in the .env file, simply run command
+
+```shell
+npm run dev
+```
