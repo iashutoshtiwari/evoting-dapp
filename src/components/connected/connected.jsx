@@ -1,3 +1,5 @@
+import './connected.scss'
+
 const Connected = (props) => {
   return (
     <div className='connected-container'>

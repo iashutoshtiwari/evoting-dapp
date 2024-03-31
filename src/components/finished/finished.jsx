@@ -1,3 +1,5 @@
+import './finished.scss'
+
 const Finished = () => {
   return (
     <div className='login-container'>

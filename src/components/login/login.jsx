@@ -1,3 +1,5 @@
+import './login.scss'
+
 const Login = (props) => {
   return (
     <div className='login-container'>

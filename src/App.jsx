@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
 import { contractAbi, contractAddress } from './constant/constant'
-import Login from './components/login'
-import Finished from './components/finished'
-import Connected from './components/connected'
+import Login from './components/login/login'
+import Finished from './components/finished/finished'
+import Connected from './components/connected/connected'
 
 import './App.scss'
 
@@ -74,7 +74,6 @@ function App() {
     const signer = provider.getSigner()
     const contractInstance = new ethers.Contract(contractAddress, contractAbi, signer)
     const status = await contractInstance.getVotingStatus()
-    console.log(status)
     setVotingStatus(status)
   }
 
