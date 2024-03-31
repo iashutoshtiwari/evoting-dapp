@@ -1,26 +1,53 @@
-# Decentralized Voting Application
+# Decentralized E-Voting Application
 
-This is a demo application to implement voting in solidity smart contract using React.
+This repository houses an application developed with hardhat, ethers, and React (using Vite) that enables users to vote for their preferred listed candidate by connecting their Metamask wallet. Currently, the project is set up to use the Volta testnet, an Ethereum-based network, but it can be easily configured to work with other networks too.
 
 ## Installation
 
-After you cloned the repository, you want to install the packages using
+After cloning/forking the repo, install all packages using:
 
-```shell
-npm install
+```bash
+  npm install
 ```
 
-You first need to compile the contract and upload it to the blockchain network. Run the following commands to compile and upload the contract.
+## Environment Variables
 
-```shell
-npx hardhat compile
-npx hardhat run --network volta scripts/deploy.js
+To run this project, you will need to add the following environment variables to your .env file
+
+`API_URL = "https://volta-rpc.energyweb.org"`
+
+`PRIVATE_KEY = "YOUR_METAMASK_WALLET_PRIVATE_KEY"`
+
+`VITE_CONTRACT_ADDRESS = ""`
+
+## Run Locally
+
+Before proceeding, it is necessary to compile the contract and deploy it to the blockchain network.
+
+Execute the following command to compile the contract:
+
+```bash
+  npx hardhat compile
 ```
 
-Once the contract is uploaded to the blockchain, copy the contract address and copy it in the .env file. You can also use another blockchain by writing the blockchain's endpoint in hardhat-config.
+Execute the following command to deploy the contract:
+
+```bash
+  npx hardhat run --network volta scripts/deploy.js
+```
+
+The above command will deploy the contract and generate a contract address, copy it in the variable `VITE_CONTRACT_ADDRESS` of the .env file. You can also use another blockchain by writing it's endpoint in hardhat-config.
 
 Once you have pasted your private key and contract address in the .env file, simply run command
 
-```shell
-npm run dev
+```bash
+  npm run start
 ```
+
+## Demo
+
+https://evoting-dapp-topaz.vercel.app/
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
