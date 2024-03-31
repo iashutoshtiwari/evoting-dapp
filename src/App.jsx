@@ -7,7 +7,7 @@ import Connected from './components/connected/connected'
 
 import './App.scss'
 
-function App() {
+const App = () => {
   const [provider, setProvider] = useState(null)
   const [account, setAccount] = useState(null)
   const [isConnected, setIsConnected] = useState(false)

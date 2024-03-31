@@ -4,26 +4,65 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f1f1f1;
 }
 
 .welcome-message {
-  font-size: 2rem;
+  font-size: 4rem;
   text-align: center;
   margin-bottom: 2rem;
 }
 
+// .login-button {
+//   background-color: #007bff;
+//   color: #fff;
+//   font-size: 1.2rem;
+//   border: none;
+//   border-radius: 0.3rem;
+//   padding: 1rem 2rem;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+// }
+
+// .login-button:hover {
+//   background-color: #0069d9;
+// }
+
+/* CSS */
 .login-button {
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 0.3rem;
-  padding: 1rem 2rem;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  width: 150px;
+  outline: 0;
+  border: 1px solid black;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.login-button:hover {
-  background-color: #0069d9;
+.login-button:after {
+  content: '';
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.login-button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .login-button {
+    padding: 13px 50px 13px;
+  }
 }
